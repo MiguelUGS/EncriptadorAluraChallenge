@@ -27,7 +27,7 @@ function encriptarTexto() {
         texto = texto.replace(/o/g, 'ober');
         texto = texto.replace(/u/g, 'ufat');
 
-        outputMensaje.innerText = texto;
+        outputMensaje.value = texto;
 
         correctContainer.style.display = 'flex';
     }
@@ -42,17 +42,17 @@ function desencriptarTexto() {
     texto = texto.replace(/ufat/g, 'u');
 
 
-    outputMensaje.innerText = texto;
+    outputMensaje.value = texto;
 }
 
 function copyToClipboard() {
-    
+
     navigator.clipboard.writeText(outputMensaje.value)
-      .then(() => {
-        alert("Texto copiado al portapapeles: " + outputMensaje.value);
-        // Puedes mostrar una notificación o realizar otras acciones después de copiar el texto
-      })
-      .catch((error) => {
-        alert("Error al copiar al portapapeles");
-      });
+        .then(() => {
+            alert("Texto copiado al portapapeles: " + outputMensaje.value);
+            // Puedes mostrar una notificación o realizar otras acciones después de copiar el texto
+        })
+        .catch((error) => {
+            alert("Error al copiar al portapapeles");
+        });
 }
